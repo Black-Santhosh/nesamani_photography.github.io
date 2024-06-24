@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plane Details</title>
+    <style>
+        @keyframes slideInFromRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #1669c9;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: slideInFromTop 2s ease-in-out;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f9;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            opacity: 0;
+            animation-duration: 2s; /* Extend duration for slower animation */
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in-out; /* Smooth animation */
+        }
+        .container:nth-child(odd) {
+            animation-name: slideInFromRight;
+        }
+        .container:nth-child(even) {
+            animation-name: slideInFromLeft;
+        }
+        .container.reverse {
+            flex-direction: row-reverse;
+        }
+        .image-side {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+        }
+        .image-side_1 {
+            background-image: url('img/pack_1.jpg'); /* Replace with your image URL */
+        }
+        .image-side_2 {
+            background-image: url('img/pack_1.jpg'); /* Replace with your image URL */
+        }
+        .image-side_3 {
+            background-image: url('img/pack_1.jpg'); /* Replace with your image URL */
+        }
+        .details-side {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .details-side h1 {
+            margin-top: 0;
+            font-size: 2em;
+            color: #333;
+        }
+        .details-side p {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.5;
+        }
+        .details-side .price {
+            font-size: 1.5em;
+            color: #e74c3c;
+            margin-top: 20px;
+        }
+        .details-side .button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .details-side .button-group button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .details-side .buy-button {
+            background-color: #3498db;
+        }
+        .details-side .buy-button:hover {
+            background-color: #2980b9;
+        }
+        .details-side .whatsapp-button {
+            background-color: #25D366;
+        }
+        .details-side .whatsapp-button:hover {
+            background-color: #1DA851;
+        }
+        .details-side .call-button {
+            background-color: #a319e4;
+        }
+        .details-side .call-button:hover {
+            background-color: #8e0dc3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Photography Packages and Prices</h1>
+    <div class="container">
+        <div class="image-side image-side_1"></div>
+        <div class="details-side">
+            <h1>SILVER PACKAGE</h1>
+            <div class="row g-2 mb-4">
+                <div class="col-sm-6">
+                    <i class="fa fa-star text-primary me-3"></i>Traditional Photograpy
+                </div>
+                <div class="col-sm-6">
+                    <i class="fa fa-star text-primary me-3"></i>Traditional Videograpy
+                </div>
+                <div class="col-sm-6">
+                    <i class="fa fa-star text-primary me-3"></i>Drone
+                </div>
+                <div class="col-sm-6">
+                    <i class="fa fa-star text-primary me-3"></i>Premium Albums
+                </div>
+            </div>
+            
+            <p class="price">$500,000</p>
+            <div class="button-group">
+                <button class="whatsapp-button" onclick="window.location.href='https://wa.me/8056823451?text=booking Gold package'">WhatsApp</button>
+                <button class="call-button" onclick="window.location.href='tel:+8056823451'">Call</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container reverse">
+        <div class="image-side image-side_2"></div>
+        <div class="details-side">
+            <h1>GOLD PACKAGE</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac vehicula justo, non vehicula sem. Nullam tincidunt, turpis in dictum vestibulum, arcu urna fringilla est, at hendrerit nisi orci sit amet erat.</p>
+            <p class="price">$600,000</p>
+            <div class="button-group">
+                <button class="whatsapp-button" onclick="window.location.href='https://wa.me/1234567890'">WhatsApp</button>
+                <button class="call-button" onclick="window.location.href='tel:+1234567890'">Call</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image-side image-side_3"></div>
+        <div class="details-side">
+            <h1>DIAMONT PACKAGE</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac vehicula justo, non vehicula sem. Nullam tincidunt, turpis in dictum vestibulum, arcu urna fringilla est, at hendrerit nisi orci sit amet erat.</p>
+            <p class="price">$700,000</p>
+            <div class="button-group">
+                <button class="whatsapp-button" onclick="window.location.href='https://wa.me/1234567890'">WhatsApp</button>
+                <button class="call-button" onclick="window.location.href='tel:+1234567890'">Call</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container reverse">
+        <div class="image-side image-side_2"></div>
+        <div class="details-side">
+            <h1>PLATINUM PACKAGE</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac vehicula justo, non vehicula sem. Nullam tincidunt, turpis in dictum vestibulum, arcu urna fringilla est, at hendrerit nisi orci sit amet erat.</p>
+            <p class="price">$600,000</p>
+            <div class="button-group">
+                <button class="whatsapp-button" onclick="window.location.href='https://wa.me/1234567890'">WhatsApp</button>
+                <button class="call-button" onclick="window.location.href='tel:+1234567890'">Call</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
