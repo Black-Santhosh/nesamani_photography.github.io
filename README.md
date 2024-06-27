@@ -1,1 +1,0 @@
-# nesamani_photography.github.io
